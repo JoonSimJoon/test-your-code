@@ -3,7 +3,11 @@
   "displayName": "Test Your Code",
   "description": "Automatically finds counterexamples by comparing your test code with the correct implementation using your input generator.",
   "version": "1.0.0",
-  "publisher": "joonsimjoon",  
+  "publisher": "joonsimjoon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoonSimJoon/test-your-code"
+  },  
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -25,5 +29,6 @@
   },
   "devDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "license": "MIT"
 }
