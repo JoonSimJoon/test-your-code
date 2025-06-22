@@ -1,0 +1,29 @@
+{
+  "name": "test-your-code",
+  "displayName": "Test Your Code",
+  "description": "Automatically finds counterexamples by comparing your test code with the correct implementation using your input generator.",
+  "version": "1.0.0",
+  "publisher": "joonsimjoon",  
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:testYourCode.generateCounterExample"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "testYourCode.generateCounterExample",
+        "title": "Test Your Code: Generate Counterexample"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
