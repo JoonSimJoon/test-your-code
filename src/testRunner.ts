@@ -1,11 +1,13 @@
 import { findCounterExample } from "./core/counterExample";
 
-const testDir = "test_code";
-
-const result = findCounterExample(testDir);
-if (result) {
-    console.log("\n❗ 반례 발견:");
-    console.log(result);
-} else {
-    console.log("\n✅ 반례 없음");
+async function main() {
+    const testDir = "test_code";
+    const result = await findCounterExample(testDir);
+    if (result) {
+        console.log("❗ 반례 발견:\n" + result);
+    } else {
+        console.log("✅ 반례 없음");
+    }
 }
+
+main();

@@ -1,14 +1,21 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <random>
 
 int main() {
-    std::srand(std::time(0));
-    int N = std::rand() % 1000 + 1; // 1 <= N <= 1000
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(0);
+
+    std::random_device rd;
+    std::mt19937 gen(rd());  // 고속 난수 생성기
+    std::uniform_int_distribution<> dist_n(1, 10);
+    std::uniform_int_distribution<> dist_val(1, 1000);
+
+    int N = dist_n(gen);
     std::cout << N << "\n";
+
     for (int i = 0; i < N; ++i) {
-        int num = std::rand() % 1000 + 1; // 1 <= num <= 1000
-        std::cout << num << (i == N - 1 ? "\n" : " ");
+        std::cout << dist_val(gen) << (i == N - 1 ? "\n" : " ");
     }
+
     return 0;
 }
