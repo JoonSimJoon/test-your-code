@@ -5,7 +5,7 @@ Provide the following in a folder:
 
 - `good.cpp`: the correct implementation
 - `test.cpp`: your test solution
-- `input_generator.cpp`: generates randomized test input
+- `input_generator.ts`: generates randomized test input
 
 This extension will:
 1. Compile all three files.
@@ -23,3 +23,7 @@ This extension will:
 ## Requirements
 
 - You must have `g++` available in your system PATH
+
+## Release Note
+
+- v1.1.1 Change  `input_generator.cpp` to `input_generator.ts`

@@ -2,7 +2,7 @@
   "name": "test-your-code",
   "displayName": "Test Your Code",
   "description": "Automatically finds counterexamples by comparing your test code with the correct implementation using your input generator.",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "publisher": "joonsimjoon",
   "repository": {
     "type": "git",

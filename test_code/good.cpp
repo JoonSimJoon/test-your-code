@@ -1,64 +1,58 @@
-#include <iostream>
-#include <map>
-#include <vector>
-#include <algorithm>
+#include<iostream>
+#include<algorithm>
+#include<vector>
 using namespace std;
-#define ll long long
-
-vector<int> v,c1v,c2v;
-int N;
-int ans[2];
+ 
+int n;
+long long jun;
+vector<int> v;
+ 
+void input() {
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		//준원이 공격력 입력
+		if (i == 0) {
+			cin >> jun;
+		}
+		//나머지 공격력 입력
+		else {
+			int data;
+			cin >> data;
+			v.push_back(data);
+		}
+	}
+}
+ 
+bool alive() {
+	sort(v.begin(), v.end());
+	for (int i = 0; i < v.size();i++) {
+		int enemy = v[i];
+		if (jun <= enemy) {
+			return false;
+		}
+		else{
+			jun += enemy;
+		}
+ 
+	}
+ 
+	return true;
+}
+ 
+void solve() {
+	input();
+	if (alive()) {
+		cout << "Yes\n";
+	}
+	else {
+		cout << "No\n";
+	}
+}
+ 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    cin>>N;
-    for(int a,i=0;i<N;i++){
-        cin>>a;
-        v.push_back(a);
-        //checkodd[a%2]++;
-    }
-    vector<int> sorted = v;
-    c1v = v;
-    sort(sorted.begin(),sorted.end());
-    for(int i=0;i<N;i++){
-        for(int j=0;j<N;j++){
-            for(int k=0;k<N-1;k++){
-                if(c1v[k]>c1v[k+1] && (c1v[k]+c1v[k+1])%2==1){
-                    //cout<<c1v[k]<<" "<<c1v[k+1]<<"\n";
-                    swap(c1v[k],c1v[k+1]);
-                }
-            }
-        }
-    }
-    for(int i=0;i<N;i++){
-        if(c1v[i]!=sorted[i]){
-            ans[1]=1;
-            break;
-        }
-    }
-    if(ans[1]==0) cout<<"So Lucky\n";
-    else cout<<"Unlucky\n";
-    c2v = v;
-    for(int i=0;i<N;i++){
-        for(int j=0;j<N;j++){
-            for(int k=0;k<N-1;k++){
-                if(c2v[k]>c2v[k+1] && (c2v[k]+c2v[k+1])%2==0){
-                    swap(c2v[k],c2v[k+1]);
-                }
-            }
-        }
-    }
-    for(int i=0;i<N;i++){
-        if(c2v[i]!=sorted[i]){
-            ans[0]=1;
-            break;
-        }
-    }
-
-
-    if(ans[0]==0) cout<<"So Lucky\n";
-    else cout<<"Unlucky\n";
-
-    return 0;
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+ 
+	solve();
+	return 0;
 }
